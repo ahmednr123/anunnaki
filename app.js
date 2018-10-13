@@ -7,9 +7,9 @@ const oneMonth = 60 * 1000 * 60 * 24;
 
 app.use(express.static('public', {maxAge: oneMonth}))
 
-app.get('/', (req, res) => {
-
-	res.end('[LIB] - http://lib.qett.in/mvc/vanilla.js (v1.0)')
+app.get('*', (req, res) => {
+	res.set('Content-Type', 'text/html');
+	res.end('[DOM LIBRARY] - <a href="http://lib.qett.in/dom/vanilla.js">http://lib.qett.in/dom/vanilla.js</a> (v1.0)')
 
 })
 
