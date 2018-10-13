@@ -3,7 +3,9 @@ const app = express()
 
 const port = process.env.PORT || 8080
 
-app.use(express.static('public'))
+const oneMonth = 60 * 1000 * 60 * 24;
+
+app.use(express.static('public', {maxAge: oneMonth}))
 
 app.get('/', (req, res) => {
 
